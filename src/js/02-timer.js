@@ -56,7 +56,15 @@ const ms = fechDateSeconds - fechNow;
     daysDate.innerHTML = ('0' + days).slice(-3);
     hoursDate.innerHTML = ('0' + hours).slice(-2);
     minutesDate.innerHTML = ('0' + minutes).slice(-2);
-    secondsDate.innerHTML = ('0' + seconds).slice(-2);
+  secondsDate.innerHTML = ('0' + seconds).slice(-2);
+  
+  if (ms < 1) {
+    clearInterval(interval);
+    daysDate.innerHTML = ('00');
+    hoursDate.innerHTML = ('00');
+    minutesDate.innerHTML = ('00');
+    secondsDate.innerHTML = ('00');
+  }
 
 }, 1000);
 });
